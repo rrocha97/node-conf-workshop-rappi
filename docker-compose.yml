@@ -1,0 +1,26 @@
+version: '3'
+services:
+  nodeconf:
+    build:
+      context: .
+    links:
+      - postgres-nodeconfg:postgres
+    volumes:
+      - .:/usr/src/nodeconfg
+    environment:
+      PORT: 3000
+      DB_CONNECTION: postgres://root:toor@postgres:5432/rappi
+      MAX_CONNECTION_POOLSIZE: 8
+      S3_BUCKET: nodeconfg
+      S3_ACCESS: AKIAJW2KL73OMGXR5XXQ
+      S3_SECRET: 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
+    ports:
+      - "3000:3000"
+  postgres-nodeconfg:
+    image: postgres:9.6
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: toor
+      POSTGRES_DB: rappi
+    ports:
+      - "5432:5432"
