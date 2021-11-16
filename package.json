@@ -22,7 +22,7 @@
   "author": "juan david canal vera",
   "license": "ISC",
   "dependencies": {
-    "aws-sdk": "^2.479.0",
+    "aws-sdk": "^2.814.0",
     "body-parse": "^0.1.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
